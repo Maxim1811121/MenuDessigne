@@ -1,0 +1,110 @@
+/* Styles généraux pour la page */
+body {
+    margin: 0; /* Supprime les marges par défaut */
+    font-family: Arial, sans-serif; /* Définit une police lisible */
+    background-color: #1a1a1a; /* Couleur de fond sombre */
+    display: flex; /* Active le modèle de boîte flex */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    height: 100vh; /* La hauteur de la vue pour centrer le contenu */
+    color: white; /* Couleur du texte */
+}
+
+/* Conteneur principal du menu en roue */
+.menu-container {
+    position: relative; /* Nécessaire pour positionner les éléments enfants */
+    width: 300px; /* Largeur du cercle */
+    height: 300px; /* Hauteur du cercle */
+    border-radius: 50%; /* Rend l'élément circulaire */
+    background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    border: 2px solid white; /* Bordure blanche */
+    
+}
+
+/* Chaque élément du menu (les options) */
+.menu-container .menu-item {
+    position: absolute; /* Positionnement relatif au conteneur */
+    width: 100px; /* Taille des éléments du menu */
+    height: 100px;
+    display: flex; /* Modèle flex pour centrer le texte */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    border-radius: 50%; /* Les options sont circulaires */
+    background: rgba(255, 255, 255, 0.1); /* Fond translucide des options */
+    border: 2px solid white; /* Bordure blanche pour chaque option */
+    animation: rainbow 2s linear infinite; /* Animation pour changer les couleurs */
+}
+
+/* Effet de survol (hover) sur les options */
+.menu-container .menu-item:hover {
+    background: rgba(255, 255, 255, 0.3); /* Change le fond à un niveau plus clair */
+    transform: scale(1.5) rotate(360deg); /* Agrandit et fait tourner l'option */
+}
+
+/* Styles pour les liens dans les options */
+.menu-container .menu-item a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white; /* Couleur du texte */
+    font-size: 14px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Positionnement des options autour du cercle */
+.menu-container .menu-item:nth-child(1) {
+    top: 0; /* Place l'élément en haut */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Centre exact */
+}
+
+.menu-container .menu-item:nth-child(2) {
+    top: 25%; /* Position légèrement en bas */
+    right: 0; /* Place à droite */
+    transform: translate(50%, -50%);
+}
+
+.menu-container .menu-item:nth-child(3) {
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%);
+}
+
+.menu-container .menu-item:nth-child(4) {
+    bottom: 25%; /* Position légèrement en haut du bas */
+    right: 0; /* Place à droite */
+    transform: translate(50%, 50%);
+}
+
+.menu-container .menu-item:nth-child(5) {
+    bottom: 0; /* Place en bas */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, 50%);
+}
+
+.menu-container .menu-item:nth-child(6) {
+    bottom: 25%; /* Position légèrement en haut du bas */
+    left: 0; /* Place à gauche */
+    transform: translate(-50%, 50%);
+}
+
+.menu-container .menu-item:nth-child(7) {
+    top: 25%; /* Position légèrement en bas */
+    left: 0; /* Place à gauche */
+    transform: translate(-50%, -50%);
+}
+
+/* Animation pour changer les couleurs de l'arc-en-ciel */
+@keyframes rainbow {
+    0% { background: red; }
+    14% { background: orange; }
+    28% { background: yellow; }
+    42% { background: green; }
+    57% { background: blue; }
+    71% { background: indigo; }
+    85% { background: violet; }
+    100% { background: red; }
+}
+
+a:hover{
+    transition: 3s;
+    transform: scale(1.5);
+}
